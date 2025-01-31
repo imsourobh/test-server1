@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 8080;
 // Middleware
 app.use(cors());
 app.use(bodyParser.json()); // Parse JSON data
-app.use(express.static(path.join(__dirname, 'public'))); // Serve static files (HTML, CSS, JS)
+app.use(express.static(path.join(__dirname))); // Serve static files (HTML, CSS, JS)
 
 // In-memory storage for user data
 let userData = {};
