@@ -19,7 +19,7 @@ app.post('/submit', (req, res) => {
   const { name, phone } = req.body;
 
   if (!name || !phone) {
-    return res.status(400).json({ error: 'Name and phone number are required' });
+    return res.status(400).json({ error: 'Name and phone number are required bro. Try again.' });
   }
 
   // Store the data
