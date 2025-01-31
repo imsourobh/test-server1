@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Data</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    #data {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+  <h1>User Data</h1>
+  <div id="data">No data received yet.</div>
+
+  <script>
+    // Fetch and display user data
+    async function fetchData() {
+      const response = await fetch('/data');
+      const data = await response.json();
+
+      if (data.name && data.phone) {
+        document.getElementById('data').innerHTML = `
+          <p><strong>Name:</strong> ${data.name}</p>
+          <p><strong>Phone:</strong> ${data.phone}</p>
+        `;
+      } else {
+        document.getElementById('data').innerHTML = 'No data received yet.';
+      }
+    }
+
+    // Fetch data every 2 seconds
+    setInterval(fetchData, 2000);
+  </script>
+</body>
+</html>
