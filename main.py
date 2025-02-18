@@ -1,7 +1,7 @@
 import streamlit as st
 
 def main():
-    st.title("Full Name Generator")
+    st.title("Full Name")
     
     # Taking user input
     first_name = st.text_input("Enter your first name:")
